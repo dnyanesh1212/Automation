@@ -12,17 +12,16 @@ public class Assignment2 {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
+
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		Thread.sleep(2000);
-		
+
 		List<WebElement> checkBox = driver.findElements(By.xpath("//input[@type = \"checkbox\"]"));
-		int count=0;
-		for(WebElement checkBoxCount: checkBox) {
-			count++;
-		}
-		System.out.println("total number of checkBoxes is : " + count);
-		
+		/*
+		 * int count = 0; for (WebElement checkBoxCount : checkBox) { count++; }
+		 * System.out.println("total number of checkBoxes is : " + count);
+		 */
+		System.out.println("total number of checkBoxes is : " + checkBox.size());
 		driver.close();
 	}
 }
